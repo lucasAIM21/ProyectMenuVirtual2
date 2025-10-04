@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Productos</title>
+    <link rel="stylesheet" href="/css/Adm.css">
+</head>
+<body>
+    <h1>Administrar Productos</h1>
+    <form id="form-producto" enctype="multipart/form-data">
+        <input type="hidden" id="producto-id" name="id">
+
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+        <input type="number" id="precio" name="precio" placeholder="Precio" required>
+        <input type="text" id="descripcion" name="descripcion" placeholder="Descripción">
+
+        <input type="file" id="imagen" name="imagen" accept="image/*">
+        <img id="preview" src="" alt="Vista previa" width="80" style="display:none;">
+
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="CategoriaId" required></select>
+        <img id="categoria-preview" alt="Preview categoría" width="40" style="vertical-align:middle; margin-left:8px; display:none;">
+
+        <button type="submit">Guardar</button>
+        <button type="button" id="cancelar" style="display:none;">Cancelar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-productos"></tbody>
+    </table>
+
+    <script src="/js/Adm.js"></script>
+</body>
+</html>

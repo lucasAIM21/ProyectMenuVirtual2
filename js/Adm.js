@@ -1,3 +1,14 @@
+fetch('http://34.205.226.226/api/VerificarSesion', { credentials: 'include' })
+  .then(res => res.json())
+  .then(data => {
+    if (!data.autenticado) {
+      window.location.href = "/PIN.html";
+    }
+  });
+
+
+
+
 const form = document.getElementById("form-producto");
 const cancelarBtn = document.getElementById("cancelar");
 const tablaProductos = document.getElementById("tabla-productos");

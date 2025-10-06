@@ -40,9 +40,10 @@ function validarPIN(PIN){
             credentials: "include",
             body: JSON.stringify({ pin: PIN })
         }).then(res => res.json()).then(data=>{
+            console.log("respuesta del servidor:", data);
             if(data.success){
                 alert("ingreso correcto");
-                window.location.href = "./views/Adm.html";
+                window.location.href = "views/Adm.html";
             }else{
                 alert("ingreso incorreto");
                 pin = "";

@@ -43,7 +43,7 @@ async function cargarCategorias() {
 function actualizarPreview() {
     const opt = categoriaSelect.selectedOptions[0];
     if (!opt) return;
-    const icon = opt.dataset.icon;
+    const icon = `https://laimserver.duckdns.org${opt.dataset.icon}`;
     if (icon) {
         categoriaPreview.src = icon;
         categoriaPreview.style.display = "inline-block";
@@ -68,9 +68,9 @@ async function cargarProductos() {
                 <td>${p.nombre}</td>
                 <td>${p.precio}</td>
                 <td>${p.descripcion || ""}</td>
-                <td>${p.imagen ? `<img src="${p.imagen}" alt="${p.nombre}" width="100">` : ""}</td>
+                <td>${p.imagen ? `<img src=https://laimserver.duckdns.org"${p.imagen}" alt="${p.nombre}" width="100">` : ""}</td>
                 <td>
-                     ${p.categoria ? `<img src="${p.categoria.icono}" width="30"> ${p.categoria.nombre}` : ""}
+                     ${p.categoria ? `<img src=https://laimserver.duckdns.org"${p.categoria.icono}" width="30"> ${p.categoria.nombre}` : ""}
                 </td>
                 <td>
                     <button onclick="editarProducto(${p.id}, '${p.nombre}', ${p.precio}, '${p.descripcion || ""}', '${p.imagen || ""}')">Editar</button>

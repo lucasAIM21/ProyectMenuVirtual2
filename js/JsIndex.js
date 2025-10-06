@@ -39,17 +39,30 @@ function validarPIN(PIN){
             },
             credentials: "include",
             body: JSON.stringify({ pin: PIN })
-        }).then(res => res.json()).then(data=>{
-            console.log("respuesta del servidor:", data);
+        }).then(res =>{
+            console.log("Respuesta status:", res.status);
+            console.log("Respuesta headers:", [...res.headers.entries()]);
+            return res.text();
+        })
+        .then(text=>{
+            console.log("Respuesta texto:", text);
+            let data;
+            try{
+                data = JSON.parse(text);
+            }catch{
+                console.error("No se pudo parsear JSON");
+                return;
+            }
+            console.log("Respuesta del servidor:", data);
             if(data.success){
                 alert("ingreso correcto");
                 window.location.href = "views/Adm.html";
-            }else{
+            } else {
                 alert("ingreso incorreto");
                 pin = "";
                 updateDisplay();
             }
-        }).catch(error => console.error("error en :", error));
+        }).catch(error=> console.error("Error en :", error));
 
     
     }catch (error) {

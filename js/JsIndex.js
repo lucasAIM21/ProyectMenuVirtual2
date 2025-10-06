@@ -42,7 +42,7 @@ function validarPIN(PIN){
         }).then(res => res.json()).then(data=>{
             if(data.success){
                 alert("ingreso correcto");
-                window.location.href = "/views/Adm.html";
+                window.location.href = "./views/Adm.html";
             }else{
                 alert("ingreso incorreto");
                 pin = "";

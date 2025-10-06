@@ -2,7 +2,7 @@ fetch('https://laimserver.duckdns.org/api/ValidarSesion', { credentials: 'includ
   .then(res => res.json())
   .then(data => {
     if (!data.autenticado) {
-      window.location.href = "/index.html";
+      window.location.href = "./index.html";
     }
   });
 

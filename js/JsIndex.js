@@ -39,7 +39,7 @@ function validarPIN(PIN){
             },
             credentials: "include",
             body: JSON.stringify({ pin: PIN })
-        }).then(res = res.json()).then(data=>{
+        }).then(res => res.json()).then(data=>{
             if(data.success){
                 alert("ingreso correcto");
                 window.location.href = "/views/Adm.html";

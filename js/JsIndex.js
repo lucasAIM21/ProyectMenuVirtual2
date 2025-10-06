@@ -56,7 +56,7 @@ function validarPIN(PIN){
             console.log("Respuesta del servidor:", data);
             if(data.success){
                 alert("ingreso correcto");
-                window.location.href = "../views/Adm.html";
+                window.location.href = "views/Adm.html";
             } else {
                 alert("ingreso incorreto");
                 pin = "";

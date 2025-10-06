@@ -1,4 +1,4 @@
-fetch('http://34.205.226.226/api/VerificarSesion', { credentials: 'include' })
+fetch('https://laimserver.duckdns.org/api/VerificarSesion', { credentials: 'include' })
   .then(res => res.json())
   .then(data => {
     if (!data.autenticado) {

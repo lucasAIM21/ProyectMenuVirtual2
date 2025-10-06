@@ -1,12 +1,12 @@
 const API_URL = "https://laimserver.duckdns.org/api";
 
-/*fetch('https://laimserver.duckdns.org/api/ValidarSesion', { credentials: 'include' })
+fetch('https://laimserver.duckdns.org/api/ValidarSesion', { credentials: 'include' })
   .then(res => res.json())
   .then(data => {
     if (!data.autenticado) {
       window.location.href = "../index.html";
     }
-  });*/
+  });
 
 
 

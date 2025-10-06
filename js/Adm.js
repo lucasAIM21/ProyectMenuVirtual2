@@ -6,7 +6,7 @@ fetch('https://laimserver.duckdns.org/api/VerificarSesion', { credentials: 'incl
     }
   });
 
-
+const API_URL = "https://laimserver.duckdns.org/api";
 
 
 const form = document.getElementById("form-producto");
@@ -20,7 +20,7 @@ let productos = [];
 // Cargar categorías al iniciar
 async function cargarCategorias() {
     try {
-        const res = await fetch("/api/categorias");
+        const res = await fetch(`${API_URL}/categorias`);
         const categorias = await res.json();
 
         categoriaSelect.innerHTML = "";
@@ -55,7 +55,7 @@ categoriaSelect.addEventListener("change", actualizarPreview);
 // Cargar productos al iniciar
 async function cargarProductos() {
     try {
-        const res = await fetch("/api/productos");
+        const res = await fetch(`${API_URL}/productos`);
         productos = await res.json();
 
         tablaProductos.innerHTML = "";
@@ -95,13 +95,13 @@ form.addEventListener("submit", async (e) => {
         let res;
         if (id) {
             // Editar producto
-            res = await fetch(`/api/productos/${id}`, {
+            res = await fetch(`${API_URL}/productos/${id}`, {
                 method: "PUT",
                 body: formData
             });
         } else {
             // Crear producto
-            res = await fetch("/api/productos", {
+            res = await fetch(`${API_URL}/productos`, {
                 method: "POST",
                 body: formData
             });
@@ -165,7 +165,7 @@ cancelarBtn.onclick = () => {
 window.eliminarProducto = async (id) => {
     if (!confirm("¿Seguro que quieres eliminar este producto?")) return;
     try {
-        const res = await fetch(`/api/productos/${id}`, { method: "DELETE" });
+        const res = await fetch(`${API_URL}/productos/${id}`, { method: "DELETE" });
         const data = await res.json();
         console.log("🗑️ Producto eliminado:", data);
         if (res.ok) {

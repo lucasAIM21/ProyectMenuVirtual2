@@ -22,7 +22,7 @@ let productos = [];
 // Cargar categorías al iniciar
 async function cargarCategorias() {
     try {
-        const res = await fetch(`${API_URL}/categorias`);
+        const res = await fetch(`${API_URL}/categorias`, { credentials: 'include' });
         const categorias = await res.json();
 
         categoriaSelect.innerHTML = "";
@@ -57,7 +57,7 @@ categoriaSelect.addEventListener("change", actualizarPreview);
 // Cargar productos al iniciar
 async function cargarProductos() {
     try {
-        const res = await fetch(`${API_URL}/productos`);
+        const res = await fetch(`${API_URL}/productos`, { credentials: 'include' });
         productos = await res.json();
 
         tablaProductos.innerHTML = "";
@@ -98,12 +98,14 @@ form.addEventListener("submit", async (e) => {
         if (id) {
             // Editar producto
             res = await fetch(`${API_URL}/productos/${id}`, {
+                credentials: 'include',
                 method: "PUT",
                 body: formData
             });
         } else {
             // Crear producto
             res = await fetch(`${API_URL}/productos`, {
+                credentials: 'include',
                 method: "POST",
                 body: formData
             });
@@ -167,7 +169,8 @@ cancelarBtn.onclick = () => {
 window.eliminarProducto = async (id) => {
     if (!confirm("¿Seguro que quieres eliminar este producto?")) return;
     try {
-        const res = await fetch(`${API_URL}/productos/${id}`, { method: "DELETE" });
+        const res = await fetch(`${API_URL}/productos/${id}`,
+             {credentials:"include" ,method: "DELETE" });
         const data = await res.json();
         console.log("🗑️ Producto eliminado:", data);
         if (res.ok) {

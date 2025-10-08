@@ -13,7 +13,7 @@ async function CargarMenu() {
             item.classList.add("platillo");
 
             item.innerHTML= `
-                <img src="${p.imagen}" alt="${p.nombre}">
+                <img src=https://laimserver.duckdns.org${p.imagen} alt="${p.nombre}">
                 <div class = "platillo-info">
                 <h2>${p.nombre}</h2>
                 <p>${p.descripcion}<p>

@@ -32,7 +32,7 @@ keys.forEach(key => {
 // Funcion de validacion
 function validarPIN(PIN){
     try {
-        fetch('https://laimserver.duckdns.org/api/ValidarPIN', {
+        fetch('https://laimserver.duckdns.org/api/ValidarPIN/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

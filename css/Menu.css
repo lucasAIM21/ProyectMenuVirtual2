@@ -1,0 +1,79 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Encabezado */
+header {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.5em;
+}
+
+/* Contenedor del menú */
+#menu {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cada platillo */
+.platillo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 15px;
+  background: #f9f9f9;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.platillo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.platillo-info {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.platillo-info h2 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.precio {
+  color: green;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* Footer de navegación */
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #222;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}

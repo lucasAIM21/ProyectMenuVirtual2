@@ -68,7 +68,7 @@ async function cargarProductos() {
                 <td>${p.nombre}</td>
                 <td>${p.precio}</td>
                 <td>${p.descripcion || ""}</td>
-                <td>${p.imagen ? `<img src=https://laimserver.duckdns.org"${p.imagen}" alt="${p.nombre}" width="100">` : ""}</td>
+                <td>${p.imagen ? `<img src=https://laimserver.duckdns.org${p.imagen} alt="${p.nombre}" width="100">` : ""}</td>
                 <td>
                      ${p.categoria ? `<img src=https://laimserver.duckdns.org${p.categoria.icono} width="30"> ${p.categoria.nombre}` : ""}
                 </td>

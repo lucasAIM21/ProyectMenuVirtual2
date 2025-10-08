@@ -1,6 +1,6 @@
 const API_URL = "https://laimserver.duckdns.org/api";
 
-fetch('https://laimserver.duckdns.org/api/ValidarSesion', { credentials: 'include' })
+fetch('https://laimserver.duckdns.org/api/ValidarPIN', { credentials: 'include', method: 'GET' })
   .then(res => res.json())
   .then(data => {
     alert(data);
@@ -70,7 +70,7 @@ async function cargarProductos() {
                 <td>${p.descripcion || ""}</td>
                 <td>${p.imagen ? `<img src=https://laimserver.duckdns.org"${p.imagen}" alt="${p.nombre}" width="100">` : ""}</td>
                 <td>
-                     ${p.categoria ? `<img src=https://laimserver.duckdns.org"${p.categoria.icono}" width="30"> ${p.categoria.nombre}` : ""}
+                     ${p.categoria ? `<img src=https://laimserver.duckdns.org${p.categoria.icono} width="30"> ${p.categoria.nombre}` : ""}
                 </td>
                 <td>
                     <button onclick="editarProducto(${p.id}, '${p.nombre}', ${p.precio}, '${p.descripcion || ""}', '${p.imagen || ""}')">Editar</button>

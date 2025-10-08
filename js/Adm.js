@@ -111,6 +111,11 @@ form.addEventListener("submit", async (e) => {
             });
         }
 
+        if(res.status === 401){
+            alert("Sesión expirada. Por favor, ingresa nuevamente.");
+            window.location.href = "../index.html";
+        }
+
         const data = await res.json();
         console.log("✅ Respuesta servidor:", data);
 
@@ -171,6 +176,10 @@ window.eliminarProducto = async (id) => {
     try {
         const res = await fetch(`${API_URL}/productos/${id}`,
              {credentials:"include" ,method: "DELETE" });
+        if(res.status === 401){
+            alert("Sesión expirada. Por favor, ingresa nuevamente.");
+            window.location.href = "../index.html";
+        }
         const data = await res.json();
         console.log("🗑️ Producto eliminado:", data);
         if (res.ok) {

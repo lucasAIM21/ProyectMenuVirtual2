@@ -7,7 +7,24 @@
   <link rel="stylesheet" href="../css/Menu.css">
 </head>
 <body>
-  <!-- Encabezado con el nombre del restaurante -->
+  <!-- Botón de menú lateral -->
+  <button id="btn-categorias" class="menu-btn">☰</button>
+
+  <!-- Barra lateral -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <h2>Categorías</h2>
+      <button id="cerrar-sidebar" class="close-btn">✕</button>
+    </div>
+    <div id="categorias-lista">
+      <!-- Aquí irán las categorías desde la DB -->
+    </div>
+  </aside>
+
+  <!-- Fondo oscuro al abrir el menú -->
+  <div id="overlay"></div>
+
+  <!-- Encabezado -->
   <header>
     <h1>Nombre del Restaurante</h1>
   </header>
@@ -18,5 +35,6 @@
   </main>
 
   <script src="../js/MostrarProductos.js"></script>
+  <script src="../js/Sidebar.js"></script>
 </body>
 </html>

@@ -155,7 +155,7 @@ window.editarProducto = (id, nombre, precio, descripcion, image, CategoriaId) =>
     }
 
     if (producto.imagen) {
-        preview.src = producto.imagen;   // aquí llega la ruta que guardaste en DB (/imgs/imgP/Chaufa.jpg, etc.)
+        preview.src = `https://laimserver.duckdns.org${producto.imagen}`;   // aquí llega la ruta que guardaste en DB (/imgs/imgP/Chaufa.jpg, etc.)
         preview.style.display = "block";
     } else {
         preview.style.display = "none";
